@@ -18,12 +18,12 @@ namespace vespertiine
     string file_type;
     int file_version;
     svector vec;
-    void runner();
-  public:
-    FileParser(string);
     hpair parseHeader(const string);
     strmap parseEntity(istream&);
     string parseMultilineKeyValue(istream&);
+    void runner();
+  public:
+    FileParser(string);
     const svector getEntities() const { return vec; }
     const unsigned int getFileVersion() const { return file_version; }
     const string getFileType() const { return file_type; }
