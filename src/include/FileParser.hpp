@@ -24,6 +24,8 @@ namespace vespertiine
     hpair parseHeader(const string);
     strmap parseEntity(istream&);
     string parseMultilineKeyValue(istream&);
-    const svector getEntities() const;
+    const svector getEntities() const { return vec; }
+    const unsigned int getFileVersion() const { return file_version; }
+    const string getFileType() const { return file_type; }
   };
 }
