@@ -67,10 +67,18 @@ namespace vespertiine
       + "\n\tCheck that file contains RLG327 on the first line."
     );
 
+    index = buffer.find('\r');
+    if (index != string::npos) throw std::invalid_argument(
+      (string) "Invalid File"
+      + "\n\tFileParser can only read files with LF-style newlines."
+    );
+
     auto ftype =
       buffer.substr(buffer.find(' ') + 1,
         buffer.find_last_not_of(numeric) - buffer.find(' ') - 1
       );
+
+
     auto fversion =
       stoi(buffer.substr(buffer.find_last_not_of(numeric), buffer.size()));
     return make_pair(ftype, fversion);
