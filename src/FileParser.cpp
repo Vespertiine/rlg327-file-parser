@@ -19,11 +19,6 @@ namespace vespertiine
     in.close();
   }
 
-  const svector FileParser::getEntities() const
-  {
-    return vec;
-  }
-
   void FileParser::runner()
   {
     string buffer;
