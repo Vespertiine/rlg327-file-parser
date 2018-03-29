@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm> 
+#include <algorithm>
 #include "FileParser.hpp"
 int main(int argc, char const *argv[])
 {
@@ -23,9 +23,29 @@ int main(int argc, char const *argv[])
   std::for_each(entity_vector.begin(), entity_vector.end(),
     [](vespertiine::entity const& e)
     {
-      std::cout << e.at("NAME") << std::endl;
+      try
+      {
+        std::cout << e.at("NAME") << std::endl;
+      }
+      catch (const std::out_of_range& ex)
+      {
+        std::cerr << ex.what() << std::endl << "One of the entities in the"
+          << " parsed file did not contain a 'NAME' symbol.";
+      }
     }
   );
+
+  // you could, optionally, choose to add 'entity' as a using statement
+  using vespertiine::entity;
+
+  entity e = entity_vector[0];
+  std::cout << std::endl << "SYMB: " << e["SYMB"] << std::endl;
+
+  // While it's discouraged, you can also use namespaces.
+  using namespace vespertiine;
+
+  file_value val = e["DESC"];
+  std::cout << std::endl << "DESC: " << val << std::endl;
 
   // you can also export to a file if you were so inclined
   std::ofstream fout;
