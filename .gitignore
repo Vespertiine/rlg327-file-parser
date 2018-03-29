@@ -31,5 +31,8 @@
 *.out
 *.app
 
+# Output File
+samples/export.txt
+
 # Compiled Binary
 parse327
