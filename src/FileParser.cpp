@@ -20,12 +20,6 @@ namespace vespertiine
   using istream = std::istream;
   using entity_vector = std::vector<entity>;
 
-  /* ==================== local prototypes ==================== */
-  inline istream& parseline(istream&, string&);
-  istream& parseline(istream&, string&, char*);
-  string trim(string);
-  /* ================== end local prototypes ================== */
-
   FileParser::FileParser(string filepath)
   {
     in.open(filepath);
@@ -36,6 +30,31 @@ namespace vespertiine
   const entity_vector FileParser::getEntities() const { return vec; }
   const unsigned int FileParser::getFileVersion() const { return file_version; }
   const string FileParser::getFileType() const { return file_type; }
+
+  std::ostream& operator<<(std::ostream& output, const vespertiine::FileParser &F)
+  {
+    string etype = F.getFileType();
+    etype = etype.substr(0, etype.find(' '));
+    output << "RLG327 " << F.getFileType() << " " << F.getFileVersion() << std::endl
+    << std::endl;
+
+    for (auto &map : F.getEntities())
+    {
+      output << "BEGIN " << etype << std::endl;
+      for (auto &pair : map)
+      {
+        if (pair.second.find('\n') != string::npos)
+        {
+          output << pair.first << std::endl << pair.second << std::endl << "."
+          << std::endl;
+          continue;
+        }
+        output << pair.first << " " << pair.second << std::endl;
+      }
+      output << "END" << std::endl << std::endl;
+    }
+    return output;
+  }
 
   void FileParser::runner()
   {
@@ -141,37 +160,7 @@ namespace vespertiine
     return val;
   }
 
-  std::ostream& operator<<(std::ostream& output, const vespertiine::FileParser &F)
-  {
-    string etype = F.getFileType();
-    etype = etype.substr(0, etype.find(' '));
-    output << "RLG327 " << F.getFileType() << " " << F.getFileVersion() << std::endl
-    << std::endl;
-
-    for (auto &map : F.getEntities())
-    {
-      output << "BEGIN " << etype << std::endl;
-      for (auto &pair : map)
-      {
-        if (pair.second.find('\n') != string::npos)
-        {
-          output << pair.first << std::endl << pair.second << std::endl << "."
-          << std::endl;
-          continue;
-        }
-        output << pair.first << " " << pair.second << std::endl;
-      }
-      output << "END" << std::endl << std::endl;
-    }
-    return output;
-  }
-
-  /* ==================== local utilities ==================== */
-  /*
-    Returns: param str with all whitespace outside of the first and
-      last characters removed.
-  */
-  string trim(string str)
+  string FileParser::trim(string str)
   {
     std::size_t pos = 0;
     while (!str.empty() && std::isspace(str.back())) str.pop_back();
@@ -179,14 +168,12 @@ namespace vespertiine
     return str.substr(pos);
   }
 
-  // acts as a wrapper over std::getline() which also trims whitespace
-  inline istream& parseline(istream& is, string& str)
+  inline istream& FileParser::parseline(istream& is, string& str)
   {
     return parseline(is, str, NULL);
   }
 
-  // acts as a wrapper over std::getline() which also trims whitespace
-  istream& parseline(istream& is, string& str, char* delim)
+  istream& FileParser::parseline(istream& is, string& str, char* delim)
   {
     istream& stream = (delim == NULL)
       ? getline(is, str)
@@ -194,6 +181,5 @@ namespace vespertiine
     if (stream) trim(str);
     return stream;
   }
-  /* ================== end local utilities ================== */
 }
 /** }@ */

@@ -39,6 +39,9 @@ namespace vespertiine
     file_header parseHeader(const std::string);
     entity parseEntity(std::istream&);
     file_value parseMultilineKeyValue(std::istream&);
+    std::string trim(std::string);
+    inline std::istream& parseline(std::istream&, std::string&);
+    std::istream& parseline(std::istream&, std::string&, char*);
     void runner();
   public:
     /**
