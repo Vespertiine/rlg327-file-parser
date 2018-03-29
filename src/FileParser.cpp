@@ -8,6 +8,8 @@ namespace vespertiine
 {
   using string = std::string;
   using istream = std::istream;
+  using entity_vector = std::vector<entity>;
+
   /* ==================== local prototypes ==================== */
   inline istream& parseline(istream&, string&);
   istream& parseline(istream&, string&, char*);
@@ -21,7 +23,7 @@ namespace vespertiine
     in.close();
   }
 
-  const svector FileParser::getEntities() const { return vec; }
+  const entity_vector FileParser::getEntities() const { return vec; }
   const unsigned int FileParser::getFileVersion() const { return file_version; }
   const string FileParser::getFileType() const { return file_type; }
 
@@ -37,9 +39,9 @@ namespace vespertiine
       "Invalid File:\n\tReached EOF before reading any fields."
     );
 
-    auto header_pair = parseHeader(buffer);
-    file_type = header_pair.first;
-    file_version = header_pair.second;
+    file_header header = parseHeader(buffer);
+    file_type = header.first;
+    file_version = header.second;
     while (parseline(in, buffer))
     {
       long unsigned int index = buffer.find(' ');
@@ -59,7 +61,7 @@ namespace vespertiine
     }
   }
 
-  hpair FileParser::parseHeader(const string buffer)
+  file_header FileParser::parseHeader(const string buffer)
   {
     string numeric = "0123456789";
     auto index = buffer.find("RLG327");
@@ -84,10 +86,10 @@ namespace vespertiine
     return make_pair(ftype, fversion);
   }
 
-  strmap FileParser::parseEntity(istream& is)
+  entity FileParser::parseEntity(istream& is)
   {
     string buffer;
-    strmap m;
+    entity e;
     long unsigned int index;
     string key;
     while (1)
@@ -100,20 +102,20 @@ namespace vespertiine
       index = buffer.find(' ');
       if (index == string::npos)
       {
-        m[buffer] = parseMultilineKeyValue(is);
+        e[buffer] = parseMultilineKeyValue(is);
         continue;
       }
       key = buffer.substr(0, index);
-      m[key] = buffer.substr(index + 1, buffer.size() - index - 1);
+      e[key] = buffer.substr(index + 1, buffer.size() - index - 1);
     }
 
-    return m;
+    return e;
   }
 
-  string FileParser::parseMultilineKeyValue(istream& is)
+  file_value FileParser::parseMultilineKeyValue(istream& is)
   {
     string buffer = "";
-    string str;
+    file_value val;
 
     while (1)
     {
@@ -122,11 +124,11 @@ namespace vespertiine
           (string) "Invalid File Syntax\n"
           + "\tReached EOF before finding multiline property terminator [.].");
       if (buffer == ".") break;
-      str += buffer + "\n";
+      val += buffer + "\n";
     }
 
-    str.pop_back();
-    return str;
+    val.pop_back();
+    return val;
   }
 
   std::ostream& operator<<(std::ostream& output, const vespertiine::FileParser &F)
@@ -161,8 +163,8 @@ namespace vespertiine
   */
   string trim(string str)
   {
-    while (!str.empty() && std::isspace(str.back())) str.pop_back();
     std::size_t pos = 0;
+    while (!str.empty() && std::isspace(str.back())) str.pop_back();
     while (pos < str.size() && std::isspace(str[pos])) pos++;
     return str.substr(pos);
   }
