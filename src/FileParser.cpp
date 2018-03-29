@@ -6,6 +6,8 @@
 
 namespace vespertiine
 {
+  using string = std::string;
+  using istream = std::istream;
   /* ==================== local prototypes ==================== */
   inline istream& parseline(istream&, string&);
   istream& parseline(istream&, string&, char*);
