@@ -13,11 +13,11 @@ int main(int argc, char const *argv[])
   // retrieve data from the file parser like so
   std::vector<std::map<std::string,std::string> > entity_vector = p.getEntities();
 
-  // or with auto
-  auto entity_vector2 = p.getEntities();
-
   // or with the namespace type
-  vespertiine::svector entity_vector3 = p.getEntities();
+  std::vector<vespertiine::entity> entity_vector3 = p.getEntities();
+
+  // or with auto : recommended
+  auto entity_vector2 = p.getEntities();
 
   // iterate like any vector
   for (auto &e : entity_vector)
