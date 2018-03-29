@@ -27,7 +27,33 @@ namespace vespertiine
     in.close();
   }
 
-  const entity_vector FileParser::getEntities() const { return vec; }
+  FileParser::FileParser(std::vector<entity> entities,
+    std::string entity_type,
+    std::string file_type, unsigned int version_number)
+  {
+    entity_type = trim(entity_type.substr(0, entity_type.find(' ')));
+    file_type = trim(file_type.substr(0, file_type.find(' ')));
+    this->file_type = "";
+    for (auto &c : entity_type) this->file_type += (char) std::toupper(c);
+    this->file_type += " ";
+    for (auto &c : file_type) this->file_type += (char) std::toupper(c);
+    file_version = version_number;
+
+    for(auto &e : entities)
+    {
+      entity tmp;
+      for (auto &p : e)
+      {
+        string key = "";
+        for (auto &c : p.first) key += (char) std::toupper(c);
+        tmp[key] = p.second;
+      }
+
+      this->entities.push_back(tmp);
+    }
+  }
+
+  const entity_vector FileParser::getEntities() const { return entities; }
   const unsigned int FileParser::getFileVersion() const { return file_version; }
   const string FileParser::getFileType() const { return file_type; }
 
@@ -85,7 +111,7 @@ namespace vespertiine
             + "\n\tCheck that the file keys match the file type."
           );
 
-        vec.push_back(parseEntity(in));
+        entities.push_back(parseEntity(in));
       }
     }
   }

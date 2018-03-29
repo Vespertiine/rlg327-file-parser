@@ -125,17 +125,14 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga45bab8eea6e760c36a785c145af6ba25"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vespertiine.html#ga45bab8eea6e760c36a785c145af6ba25">vespertiine::parseline</a> (istream &amp;, string &amp;)</td></tr>
-<tr class="separator:ga45bab8eea6e760c36a785c145af6ba25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga05687b76bc32ebfb4d97d92c417acaf6"><td class="memItemLeft" align="right" valign="top">istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vespertiine.html#ga05687b76bc32ebfb4d97d92c417acaf6">vespertiine::parseline</a> (istream &amp;, string &amp;, char *)</td></tr>
-<tr class="separator:ga05687b76bc32ebfb4d97d92c417acaf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5541b037e75ed830f526c2e073b26474"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vespertiine.html#ga5541b037e75ed830f526c2e073b26474">vespertiine::trim</a> (string)</td></tr>
-<tr class="separator:ga5541b037e75ed830f526c2e073b26474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1ca507e4b8f52201ba9cccaaf496e9be"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vespertiine.html#ga1ca507e4b8f52201ba9cccaaf496e9be">vespertiine::operator&lt;&lt;</a> (std::ostream &amp;output, const <a class="el" href="classvespertiine_1_1FileParser.html">vespertiine::FileParser</a> &amp;F)</td></tr>
 <tr class="separator:ga1ca507e4b8f52201ba9cccaaf496e9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga01e372573c11d4c2848419c8842d583e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vespertiine.html#ga01e372573c11d4c2848419c8842d583e">vespertiine::FileParser::FileParser</a> (std::string file_path)</td></tr>
 <tr class="memdesc:ga01e372573c11d4c2848419c8842d583e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct and populate the <a class="el" href="classvespertiine_1_1FileParser.html" title="Parses COM S 327 DIF files to a vector of maps of string pairs. ">FileParser</a>.  <a href="#ga01e372573c11d4c2848419c8842d583e">More...</a><br /></td></tr>
 <tr class="separator:ga01e372573c11d4c2848419c8842d583e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad562ef6be958292fbc74803d47b0eda3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vespertiine.html#gad562ef6be958292fbc74803d47b0eda3">vespertiine::FileParser::FileParser</a> (std::vector&lt; entity &gt; entities, std::string entity_type, std::string file_type, unsigned int version_number)</td></tr>
+<tr class="memdesc:gad562ef6be958292fbc74803d47b0eda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classvespertiine_1_1FileParser.html" title="Parses COM S 327 DIF files to a vector of maps of string pairs. ">FileParser</a> based on an existing entity.  <a href="#gad562ef6be958292fbc74803d47b0eda3">More...</a><br /></td></tr>
+<tr class="separator:gad562ef6be958292fbc74803d47b0eda3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac2360eb7febe37b75f13dc697a3d37ed"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; entity &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vespertiine.html#gac2360eb7febe37b75f13dc697a3d37ed">vespertiine::FileParser::getEntities</a> () const </td></tr>
 <tr class="memdesc:gac2360eb7febe37b75f13dc697a3d37ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the contents of the file.  <a href="#gac2360eb7febe37b75f13dc697a3d37ed">More...</a><br /></td></tr>
 <tr class="separator:gac2360eb7febe37b75f13dc697a3d37ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,7 +274,59 @@ Friends</h2></td></tr>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>Will throw std::invalid_argument exception if any of the filetype assumptions are violated. </dd></dl>
 
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00029">29</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
+<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00023">23</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gad562ef6be958292fbc74803d47b0eda3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vespertiine::FileParser::FileParser </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="group__vespertiine.html#gaf9205d715bdeade18d7039864ef59b44">entity</a> &gt;&#160;</td>
+          <td class="paramname"><em>entities</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>entity_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>file_type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>version_number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classvespertiine_1_1FileParser.html" title="Parses COM S 327 DIF files to a vector of maps of string pairs. ">FileParser</a> based on an existing entity. </p>
+<p>This will convert all of the keys in the entities vector, the entity type, and the file type to uppercase and bind it to a <a class="el" href="classvespertiine_1_1FileParser.html" title="Parses COM S 327 DIF files to a vector of maps of string pairs. ">FileParser</a>. As such, you can echo back out to file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">entities</td><td>A vector of type entity, which should be a map of string pairs. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">entity_type</td><td>The type of the entities in the vector, e.g. MONSTER, which will be trimmed to one word and capitalized. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file_type</td><td>The type of the file, e.g. DESCRIPTION, which will be trimmed to one word and capitalized. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">version_number</td><td>The version, e.g. 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00030">30</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +346,7 @@ Friends</h2></td></tr>
 <p>Return the contents of the file. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of maps of string pairs, e.g. vector&lt;map&lt;string,string&gt;&gt;&gt;. Each vector will be an individual entity in the file, and each map will contain all of the values in that entity with a key of their symbol. </dd></dl>
 
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00036">36</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
+<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00056">56</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
 
 <p><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -331,25 +380,13 @@ Friends</h2></td></tr>
 <p>The string will be of the format, "[ENTITY_TYPE] [FILE_TYPE]".</p>
 <dl class="section return"><dt>Returns</dt><dd>The file type string. </dd></dl>
 
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00038">38</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
+<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00058">58</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
 
 <p><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_cgraph.png" border="0" usemap="#group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_cgraph" alt=""/></div>
-<map name="group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_cgraph" id="group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_cgraph">
-<area shape="rect" id="node2" href="group__vespertiine.html#ga45bab8eea6e760c36a785c145af6ba25" title="vespertiine::parseline" alt="" coords="205,13,351,39"/>
-</map>
-</div>
-</p>
-
-<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_icgraph.png" border="0" usemap="#group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_icgraph" alt=""/></div>
 <map name="group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_icgraph" id="group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_icgraph">
 <area shape="rect" id="node2" href="group__vespertiine.html#ga1ca507e4b8f52201ba9cccaaf496e9be" title="vespertiine::operator\&lt;\&lt;" alt="" coords="205,13,361,39"/>
@@ -375,13 +412,13 @@ Friends</h2></td></tr>
 <p>Return the version of the file as a single unsigned integer. </p>
 <dl class="section return"><dt>Returns</dt><dd>Version number of the file. </dd></dl>
 
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00037">37</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
+<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00057">57</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
 
-<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="group__vespertiine_ga69070e93ff23a24380d0bad1c096205a_icgraph.png" border="0" usemap="#group__vespertiine_ga69070e93ff23a24380d0bad1c096205a_icgraph" alt=""/></div>
 <map name="group__vespertiine_ga69070e93ff23a24380d0bad1c096205a_icgraph" id="group__vespertiine_ga69070e93ff23a24380d0bad1c096205a_icgraph">
 <area shape="rect" id="node2" href="group__vespertiine.html#ga1ca507e4b8f52201ba9cccaaf496e9be" title="vespertiine::operator\&lt;\&lt;" alt="" coords="205,13,361,39"/>
@@ -416,144 +453,18 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 <p>This will output a matching file similar to whatever is provided, however it will be alphabetically ordered by keys within each individual entity. </p>
 
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00144">144</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
+<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00060">60</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
 
-<p><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><img src="group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be_cgraph.png" border="0" usemap="#group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be_cgraph" alt=""/></div>
 <map name="group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be_cgraph" id="group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be_cgraph">
 <area shape="rect" id="node2" href="group__vespertiine.html#ga950b19f6ead99d8297e37eaeeed2fd3f" title="Return the type of the file as a string. " alt="" coords="209,5,361,47"/>
-<area shape="rect" id="node4" href="group__vespertiine.html#ga69070e93ff23a24380d0bad1c096205a" title="Return the version of the file as a single unsigned integer. " alt="" coords="209,71,361,112"/>
-<area shape="rect" id="node5" href="group__vespertiine.html#gac2360eb7febe37b75f13dc697a3d37ed" title="Return the contents of the file. " alt="" coords="209,136,361,177"/>
-<area shape="rect" id="node3" href="group__vespertiine.html#ga45bab8eea6e760c36a785c145af6ba25" title="vespertiine::parseline" alt="" coords="409,13,555,39"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ga45bab8eea6e760c36a785c145af6ba25"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">istream &amp; vespertiine::parseline </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__vespertiine.html#ga338498d8eeb1f5a3da1f237df24c4250">istream</a> &amp;&#160;</td>
-          <td class="paramname"><em>is</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__vespertiine.html#ga7e5191e67b3b71f8044b653a3f9b2065">string</a> &amp;&#160;</td>
-          <td class="paramname"><em>str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00183">183</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
-
-<p><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25_icgraph.png" border="0" usemap="#group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25_icgraph" alt=""/></div>
-<map name="group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25_icgraph" id="group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25_icgraph">
-<area shape="rect" id="node2" href="group__vespertiine.html#ga950b19f6ead99d8297e37eaeeed2fd3f" title="Return the type of the file as a string. " alt="" coords="199,5,351,47"/>
-<area shape="rect" id="node3" href="group__vespertiine.html#ga1ca507e4b8f52201ba9cccaaf496e9be" title="vespertiine::operator\&lt;\&lt;" alt="" coords="399,13,555,39"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ga05687b76bc32ebfb4d97d92c417acaf6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">istream &amp; vespertiine::parseline </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__vespertiine.html#ga338498d8eeb1f5a3da1f237df24c4250">istream</a> &amp;&#160;</td>
-          <td class="paramname"><em>is</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__vespertiine.html#ga7e5191e67b3b71f8044b653a3f9b2065">string</a> &amp;&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>delim</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00189">189</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
-
-<p><div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6_cgraph.png" border="0" usemap="#group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6_cgraph" alt=""/></div>
-<map name="group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6_cgraph" id="group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6_cgraph">
-<area shape="rect" id="node2" href="group__vespertiine.html#ga5541b037e75ed830f526c2e073b26474" title="vespertiine::trim" alt="" coords="199,5,313,32"/>
-</map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ga5541b037e75ed830f526c2e073b26474"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string vespertiine::trim </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__vespertiine.html#ga7e5191e67b3b71f8044b653a3f9b2065">string</a>&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00174">174</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
-
-<p><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="group__vespertiine_ga5541b037e75ed830f526c2e073b26474_icgraph.png" border="0" usemap="#group__vespertiine_ga5541b037e75ed830f526c2e073b26474_icgraph" alt=""/></div>
-<map name="group__vespertiine_ga5541b037e75ed830f526c2e073b26474_icgraph" id="group__vespertiine_ga5541b037e75ed830f526c2e073b26474_icgraph">
-<area shape="rect" id="node2" href="group__vespertiine.html#ga05687b76bc32ebfb4d97d92c417acaf6" title="vespertiine::parseline" alt="" coords="168,5,313,32"/>
+<area shape="rect" id="node3" href="group__vespertiine.html#ga69070e93ff23a24380d0bad1c096205a" title="Return the version of the file as a single unsigned integer. " alt="" coords="209,71,361,112"/>
+<area shape="rect" id="node4" href="group__vespertiine.html#gac2360eb7febe37b75f13dc697a3d37ed" title="Return the contents of the file. " alt="" coords="209,136,361,177"/>
 </map>
 </div>
 </p>
@@ -596,7 +507,7 @@ Friends</h2></td></tr>
 <p>Overload the output operator to match the style of the DIF type. </p>
 <p>This will output a matching file similar to whatever is provided, however it will be alphabetically ordered by keys within each individual entity. </p>
 
-<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00144">144</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
+<p>Definition at line <a class="el" href="FileParser_8cpp_source.html#l00060">60</a> of file <a class="el" href="FileParser_8cpp_source.html">FileParser.cpp</a>.</p>
 
 </div>
 </div>
