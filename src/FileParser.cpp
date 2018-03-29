@@ -1,6 +1,19 @@
 #include <functional>
 #include "FileParser.hpp"
 
+/**
+  \file FileParser.cpp
+
+  \author Freya Gaynor
+  \date 2018-03-28
+
+  A modular file parser for COM S 327 wtih Dr. Shaeffer.
+*/
+
+/**
+  \addtogroup vespertiine
+  @{
+*/
 namespace vespertiine
 {
   using string = std::string;
@@ -183,3 +196,4 @@ namespace vespertiine
   }
   /* ================== end local utilities ================== */
 }
+/** }@ */
