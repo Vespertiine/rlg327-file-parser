@@ -10,6 +10,8 @@ namespace vespertiine
   using strmap = std::map<string,string>;
   using svector = std::vector< std::map<string,string> >;
   using hpair = std::pair<string, long unsigned int>;
+  typedef svector* iterator;
+  typedef const svector* const_iterator;
 
   class FileParser
   {
@@ -27,5 +29,6 @@ namespace vespertiine
     const svector getEntities() const { return vec; }
     const unsigned int getFileVersion() const { return file_version; }
     const string getFileType() const { return file_type; }
+    friend std::ostream& operator<<(std::ostream& output, const FileParser &F);
   };
 }

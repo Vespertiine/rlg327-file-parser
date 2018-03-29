@@ -73,7 +73,6 @@ namespace vespertiine
         buffer.find_last_not_of(numeric) - buffer.find(' ') - 1
       );
 
-
     auto fversion =
       stoi(buffer.substr(buffer.find_last_not_of(numeric), buffer.size()));
     return make_pair(ftype, fversion);
@@ -122,6 +121,31 @@ namespace vespertiine
 
     str.pop_back();
     return str;
+  }
+
+  std::ostream& operator<<(std::ostream& output, const vespertiine::FileParser &F)
+  {
+    string etype = F.getFileType();
+    etype = etype.substr(0, etype.find(' '));
+    output << "RLG327 " << F.getFileType() << " " << F.getFileVersion() << std::endl
+    << std::endl;
+
+    for (auto &map : F.getEntities())
+    {
+      output << "BEGIN " << etype << std::endl;
+      for (auto &pair : map)
+      {
+        if (pair.second.find('\n') != string::npos)
+        {
+          output << pair.first << std::endl << pair.second << std::endl << "."
+          << std::endl;
+          continue;
+        }
+        output << pair.first << " " << pair.second << std::endl;
+      }
+      output << "END" << std::endl << std::endl;
+    }
+    return output;
   }
 
   /* ==================== local utilities ==================== */
