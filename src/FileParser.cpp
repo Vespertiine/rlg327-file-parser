@@ -1,9 +1,6 @@
 #include <functional>
 #include "FileParser.hpp"
 
-// temporary
-#include <iostream>
-
 namespace vespertiine
 {
   using string = std::string;
