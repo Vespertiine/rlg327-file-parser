@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm> 
 #include "FileParser.hpp"
 int main(int argc, char const *argv[])
 {
@@ -19,10 +20,12 @@ int main(int argc, char const *argv[])
   // or with auto : recommended
   auto entity_vector2 = p.getEntities();
 
-  // iterate like any vector
-  for (auto &e : entity_vector)
-    // print the 'NAME' field for each entity.
-    std::cout << e["NAME"] << std::endl;
+  std::for_each(entity_vector.begin(), entity_vector.end(),
+    [](vespertiine::entity const& e)
+    {
+      std::cout << e.at("NAME") << std::endl;
+    }
+  );
 
   // you can also export to a file if you were so inclined
   std::ofstream fout;
