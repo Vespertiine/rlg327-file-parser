@@ -3,4 +3,4 @@ A parser for the plaintext config files that Dr. Shaeffer began using in version
 
 The parser requires LF line endings.
 
-See `src/runner.cpp` for some details on usage.
+See `src/runner.cpp` or the included files in the `doc` folder for details on usage.

@@ -47,9 +47,19 @@ int main(int argc, char const *argv[])
   file_value val = e["DESC"];
   std::cout << std::endl << "DESC: " << val << std::endl;
 
+
+  // you can create a parser with your own definitions
+  std::vector< std::map< std::string, std::string> > new_vector;
+  std::map<std::string, std::string> new_entity;
+  new_entity["NAME"] = "Lara Croft";
+  new_entity["Desc"] = "Keys will automatically save as uppercase.";
+  new_vector.push_back(new_entity);
+
+  FileParser p2(new_vector, "CHARACTER TRIMMED", "DESCRIPTION", 2);
+
   // you can also export to a file if you were so inclined
   std::ofstream fout;
   fout.open("./samples/export.txt");
-  fout << p;
+  fout << p2;
   return 0;
 }

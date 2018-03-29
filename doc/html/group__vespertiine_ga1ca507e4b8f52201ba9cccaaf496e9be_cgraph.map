@@ -1,6 +1,5 @@
 <map id="vespertiine::operator&lt;&lt;" name="vespertiine::operator&lt;&lt;">
 <area shape="rect" id="node2" href="$group__vespertiine.html#ga950b19f6ead99d8297e37eaeeed2fd3f" title="Return the type of the file as a string. " alt="" coords="209,5,361,47"/>
-<area shape="rect" id="node4" href="$group__vespertiine.html#ga69070e93ff23a24380d0bad1c096205a" title="Return the version of the file as a single unsigned integer. " alt="" coords="209,71,361,112"/>
-<area shape="rect" id="node5" href="$group__vespertiine.html#gac2360eb7febe37b75f13dc697a3d37ed" title="Return the contents of the file. " alt="" coords="209,136,361,177"/>
-<area shape="rect" id="node3" href="$group__vespertiine.html#ga45bab8eea6e760c36a785c145af6ba25" title="vespertiine::parseline" alt="" coords="409,13,555,39"/>
+<area shape="rect" id="node3" href="$group__vespertiine.html#ga69070e93ff23a24380d0bad1c096205a" title="Return the version of the file as a single unsigned integer. " alt="" coords="209,71,361,112"/>
+<area shape="rect" id="node4" href="$group__vespertiine.html#gac2360eb7febe37b75f13dc697a3d37ed" title="Return the contents of the file. " alt="" coords="209,136,361,177"/>
 </map>

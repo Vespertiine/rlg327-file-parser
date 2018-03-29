@@ -30,16 +30,12 @@ using \hyperlink{group__vespertiine_ga1294ff353dd9ea9b26cf4a1573db109e}{vesperti
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-istream \& \hyperlink{group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25}{vespertiine\+::parseline} (istream \&, string \&)
-\item 
-istream \& \hyperlink{group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6}{vespertiine\+::parseline} (istream \&, string \&, char $\ast$)
-\item 
-string \hyperlink{group__vespertiine_ga5541b037e75ed830f526c2e073b26474}{vespertiine\+::trim} (string)
-\item 
 std\+::ostream \& \hyperlink{group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be}{vespertiine\+::operator$<$$<$} (std\+::ostream \&output, const \hyperlink{classvespertiine_1_1FileParser}{vespertiine\+::\+File\+Parser} \&F)
 \item 
 \hyperlink{group__vespertiine_ga01e372573c11d4c2848419c8842d583e}{vespertiine\+::\+File\+Parser\+::\+File\+Parser} (std\+::string file\+\_\+path)
 \begin{DoxyCompactList}\small\item\em Construct and populate the \hyperlink{classvespertiine_1_1FileParser}{File\+Parser}. \end{DoxyCompactList}\item 
+\hyperlink{group__vespertiine_gad562ef6be958292fbc74803d47b0eda3}{vespertiine\+::\+File\+Parser\+::\+File\+Parser} (std\+::vector$<$ entity $>$ entities, std\+::string entity\+\_\+type, std\+::string file\+\_\+type, unsigned int version\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classvespertiine_1_1FileParser}{File\+Parser} based on an existing entity. \end{DoxyCompactList}\item 
 const std\+::vector$<$ entity $>$ \hyperlink{group__vespertiine_gac2360eb7febe37b75f13dc697a3d37ed}{vespertiine\+::\+File\+Parser\+::get\+Entities} () const 
 \begin{DoxyCompactList}\small\item\em Return the contents of the file. \end{DoxyCompactList}\item 
 const unsigned int \hyperlink{group__vespertiine_ga69070e93ff23a24380d0bad1c096205a}{vespertiine\+::\+File\+Parser\+::get\+File\+Version} () const 
@@ -132,7 +128,38 @@ Will throw std\+::invalid\+\_\+argument exception if any of the filetype assumpt
 \end{DoxyWarning}
 
 
-Definition at line 29 of file File\+Parser.\+cpp.
+Definition at line 23 of file File\+Parser.\+cpp.
+
+\index{Vespertiine@{Vespertiine}!File\+Parser@{File\+Parser}}
+\index{File\+Parser@{File\+Parser}!Vespertiine@{Vespertiine}}
+\subsubsection[{\texorpdfstring{File\+Parser(std\+::vector$<$ entity $>$ entities, std\+::string entity\+\_\+type, std\+::string file\+\_\+type, unsigned int version\+\_\+number)}{FileParser(std::vector< entity > entities, std::string entity_type, std::string file_type, unsigned int version_number)}}]{\setlength{\rightskip}{0pt plus 5cm}vespertiine\+::\+File\+Parser\+::\+File\+Parser (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf entity} $>$}]{entities, }
+\item[{std\+::string}]{entity\+\_\+type, }
+\item[{std\+::string}]{file\+\_\+type, }
+\item[{unsigned int}]{version\+\_\+number}
+\end{DoxyParamCaption}
+)}\hypertarget{group__vespertiine_gad562ef6be958292fbc74803d47b0eda3}{}\label{group__vespertiine_gad562ef6be958292fbc74803d47b0eda3}
+
+
+Construct a \hyperlink{classvespertiine_1_1FileParser}{File\+Parser} based on an existing entity. 
+
+This will convert all of the keys in the entities vector, the entity type, and the file type to uppercase and bind it to a \hyperlink{classvespertiine_1_1FileParser}{File\+Parser}. As such, you can echo back out to file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em entities} & A vector of type entity, which should be a map of string pairs. \\
+\hline
+\mbox{\tt in}  & {\em entity\+\_\+type} & The type of the entities in the vector, e.\+g. M\+O\+N\+S\+T\+ER, which will be trimmed to one word and capitalized. \\
+\hline
+\mbox{\tt in}  & {\em file\+\_\+type} & The type of the file, e.\+g. D\+E\+S\+C\+R\+I\+P\+T\+I\+ON, which will be trimmed to one word and capitalized. \\
+\hline
+\mbox{\tt in}  & {\em version\+\_\+number} & The version, e.\+g. 1. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file File\+Parser.\+cpp.
 
 \index{Vespertiine@{Vespertiine}!get\+Entities@{get\+Entities}}
 \index{get\+Entities@{get\+Entities}!Vespertiine@{Vespertiine}}
@@ -150,12 +177,11 @@ A vector of maps of string pairs, e.\+g. vector$<$map$<$string,string$>$$>$$>$. 
 \end{DoxyReturn}
 
 
-Definition at line 36 of file File\+Parser.\+cpp.
+Definition at line 56 of file File\+Parser.\+cpp.
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -182,24 +208,11 @@ The file type string.
 \end{DoxyReturn}
 
 
-Definition at line 38 of file File\+Parser.\+cpp.
+Definition at line 58 of file File\+Parser.\+cpp.
 
 
 
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=339pt]{group__vespertiine_ga950b19f6ead99d8297e37eaeeed2fd3f_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -224,12 +237,11 @@ Version number of the file.
 \end{DoxyReturn}
 
 
-Definition at line 37 of file File\+Parser.\+cpp.
+Definition at line 57 of file File\+Parser.\+cpp.
 
 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -248,88 +260,15 @@ Here is the caller graph for this function\+:
 )}\hypertarget{group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be}{}\label{group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be}
 This will output a matching file similar to whatever is provided, however it will be alphabetically ordered by keys within each individual entity. 
 
-Definition at line 144 of file File\+Parser.\+cpp.
+Definition at line 60 of file File\+Parser.\+cpp.
 
 
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be_cgraph}
-\end{center}
-\end{figure}
-
-
-\index{Vespertiine@{Vespertiine}!parseline@{parseline}}
-\index{parseline@{parseline}!Vespertiine@{Vespertiine}}
-\subsubsection[{\texorpdfstring{parseline(istream \&, string \&)}{parseline(istream &, string &)}}]{\setlength{\rightskip}{0pt plus 5cm}istream \& vespertiine\+::parseline (
-\begin{DoxyParamCaption}
-\item[{{\bf istream} \&}]{is, }
-\item[{{\bf string} \&}]{str}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25}{}\label{group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25}
-
-
-Definition at line 183 of file File\+Parser.\+cpp.
-
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{group__vespertiine_ga45bab8eea6e760c36a785c145af6ba25_icgraph}
-\end{center}
-\end{figure}
-
-
-\index{Vespertiine@{Vespertiine}!parseline@{parseline}}
-\index{parseline@{parseline}!Vespertiine@{Vespertiine}}
-\subsubsection[{\texorpdfstring{parseline(istream \&, string \&, char $\ast$)}{parseline(istream &, string &, char *)}}]{\setlength{\rightskip}{0pt plus 5cm}istream \& vespertiine\+::parseline (
-\begin{DoxyParamCaption}
-\item[{{\bf istream} \&}]{is, }
-\item[{{\bf string} \&}]{str, }
-\item[{char $\ast$}]{delim}
-\end{DoxyParamCaption}
-)}\hypertarget{group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6}{}\label{group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6}
-
-
-Definition at line 189 of file File\+Parser.\+cpp.
-
-
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=311pt]{group__vespertiine_ga05687b76bc32ebfb4d97d92c417acaf6_cgraph}
-\end{center}
-\end{figure}
-
-
-\index{Vespertiine@{Vespertiine}!trim@{trim}}
-\index{trim@{trim}!Vespertiine@{Vespertiine}}
-\subsubsection[{\texorpdfstring{trim(string)}{trim(string)}}]{\setlength{\rightskip}{0pt plus 5cm}string vespertiine\+::trim (
-\begin{DoxyParamCaption}
-\item[{{\bf string}}]{str}
-\end{DoxyParamCaption}
-)}\hypertarget{group__vespertiine_ga5541b037e75ed830f526c2e073b26474}{}\label{group__vespertiine_ga5541b037e75ed830f526c2e073b26474}
-
-
-Definition at line 174 of file File\+Parser.\+cpp.
-
-
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=311pt]{group__vespertiine_ga5541b037e75ed830f526c2e073b26474_icgraph}
+\includegraphics[width=347pt]{group__vespertiine_ga1ca507e4b8f52201ba9cccaaf496e9be_cgraph}
 \end{center}
 \end{figure}
 
@@ -351,5 +290,5 @@ Overload the output operator to match the style of the D\+IF type.
 
 This will output a matching file similar to whatever is provided, however it will be alphabetically ordered by keys within each individual entity. 
 
-Definition at line 144 of file File\+Parser.\+cpp.
+Definition at line 60 of file File\+Parser.\+cpp.
 

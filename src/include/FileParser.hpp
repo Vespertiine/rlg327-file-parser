@@ -35,7 +35,7 @@ namespace vespertiine
     std::ifstream in;
     std::string file_type;
     int file_version;
-    std::vector<entity> vec;
+    std::vector<entity> entities;
     file_header parseHeader(const std::string);
     entity parseEntity(std::istream&);
     file_value parseMultilineKeyValue(std::istream&);
@@ -55,6 +55,23 @@ namespace vespertiine
       \warning Will throw std::invalid_argument exception if any of the filetype assumptions are violated.
     */
     FileParser(std::string file_path);
+
+    /**
+      \brief Construct a FileParser based on an existing entity.
+
+      This will convert all of the keys in the entities vector, the entity type,
+      and the file type to uppercase and bind it to a FileParser. As such, you
+      can echo back out to file.
+
+      \param[in] entities A vector of type entity, which should be a map of string pairs.
+      \param[in] entity_type The type of the entities in the vector, e.g. MONSTER, which will be trimmed to one word and capitalized.
+      \param[in] file_type The type of the file, e.g. DESCRIPTION, which will be trimmed to one word and capitalized.
+      \param[in] version_number The version, e.g. 1.
+    */
+    FileParser(std::vector<entity> entities,
+      std::string entity_type,
+      std::string file_type,
+      unsigned int version_number);
 
     /**
       \brief Return the contents of the file.
