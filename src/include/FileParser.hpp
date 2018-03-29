@@ -10,8 +10,6 @@ namespace vespertiine
   using strmap = std::map<string,string>;
   using svector = std::vector< std::map<string,string> >;
   using hpair = std::pair<string, long unsigned int>;
-  typedef svector* iterator;
-  typedef const svector* const_iterator;
 
   class FileParser
   {
