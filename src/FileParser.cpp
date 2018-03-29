@@ -21,6 +21,10 @@ namespace vespertiine
     in.close();
   }
 
+  const svector FileParser::getEntities() const { return vec; }
+  const unsigned int FileParser::getFileVersion() const { return file_version; }
+  const std::string FileParser::getFileType() const { return file_type; }
+
   void FileParser::runner()
   {
     string buffer;

@@ -7,7 +7,7 @@ namespace vespertiine
 {
   using strmap = std::map<std::string,std::string>;
   using svector = std::vector<strmap>;
-  using hpair = std::pair<std::string, long unsigned int>;
+  using hpair = std::pair<std::string, unsigned int>;
 
   class FileParser
   {
@@ -22,9 +22,9 @@ namespace vespertiine
     void runner();
   public:
     FileParser(std::string);
-    const svector getEntities() const { return vec; }
-    const unsigned int getFileVersion() const { return file_version; }
-    const std::string getFileType() const { return file_type; }
+    const svector getEntities() const;
+    const unsigned int getFileVersion() const;
+    const std::string getFileType() const;
     friend std::ostream& operator<<(std::ostream& output, const FileParser &F);
   };
 }
