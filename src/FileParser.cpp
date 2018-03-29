@@ -23,7 +23,7 @@ namespace vespertiine
 
   const svector FileParser::getEntities() const { return vec; }
   const unsigned int FileParser::getFileVersion() const { return file_version; }
-  const std::string FileParser::getFileType() const { return file_type; }
+  const string FileParser::getFileType() const { return file_type; }
 
   void FileParser::runner()
   {
@@ -42,7 +42,7 @@ namespace vespertiine
     file_version = header_pair.second;
     while (parseline(in, buffer))
     {
-      unsigned long int index = buffer.find(' ');
+      long unsigned int index = buffer.find(' ');
       if (index != string::npos
         && buffer.substr(0, index) == "BEGIN"
       )
