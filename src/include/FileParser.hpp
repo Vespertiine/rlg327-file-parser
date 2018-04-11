@@ -27,7 +27,7 @@ namespace vespertiine
       3a. If followed by a newline, the multiline values must end with a [.] on its own line.
 
     \author Freya Gaynor
-    \date 2018-03-28
+    \date 2018-04-13
   */
   class FileParser
   {
